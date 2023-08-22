@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from "react"
-// import { players, playerInterface } from "../../../data/players";
 import Link from "next/link";
 
 

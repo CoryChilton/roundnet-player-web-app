@@ -1,7 +1,6 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
-import { useState, useEffect } from "react"
-// import { players, playerInterface, isAPlayer } from '../../../../data/players';
+import { useState, useEffect } from "react";
+import StatBlock from "@/components/player/StatBlock";
 
 interface pageProps{
   params: {name: string}
@@ -28,7 +27,13 @@ export default function PlayerPage({params}: pageProps){
   useEffect(() => {
     fetchPlayerData(params.name).then(data => setPlayer(data));
   }, []);
-  console.log(player)
+
+  console.log(player.greatest_point_diff_game_loss);
+  console.log(player.greatest_point_diff_game_win);
+  console.log(player.closest_series);
+  console.log(player.longest_overtime_game);
+  console.log(player.past_tournaments);
+  console.log(player);
   // const player = players.get(params.name);
   // if(!isAPlayer(player)) {
   //   return <div>PLAYER NOT FOUND!</div>;
@@ -40,16 +45,12 @@ export default function PlayerPage({params}: pageProps){
     <div>
       <h1 className="text-center text-xl font-bold mb-10">{firstLetterUpper(player.player_name)}&apos;s Stats</h1>
       <div className="flex justify-around">
-        <StatMeter percent={PERCENT_GAME_WINS} label="Game Wins" />
-        <StatMeter percent={PERCENT_SERIES_WINS} label="Series Wins" />
-        <StatMeter percent={PERCENT_POINT_WINS} label="Point Wins" />
+        <StatBlock percent={PERCENT_GAME_WINS} label="Game Wins" won={player.games_won} lost={player.games_lost} />
+        <StatBlock percent={PERCENT_SERIES_WINS} label="Series Wins" won={player.series_won} lost={player.series_lost}/>
+        <StatBlock percent={PERCENT_POINT_WINS} label="Point Wins" won={player.points_won} lost={player.points_lost} />
       </div>
     </div>
   )
-}
-
-function StatMeter({percent, label}:{percent: number, label: string}){
-  return <div>{label}: {percent}%</div>
 }
 
 function firstLetterUpper(s:string) {
