@@ -3,9 +3,13 @@ import { useState } from "react"
 import { players, playerInterface } from "../../../data/players";
 import Link from "next/link";
 
+
+
 export default function PlayersPage(){
   // state to control player search value
   const [searchInput, setSearchInput] = useState('');
+
+  const allPlayers = logPlayers();
 
   //Making an array of the players that should show up on this search
   const searchedPlayers: playerInterface[] = [];
@@ -28,4 +32,12 @@ export default function PlayersPage(){
       )}
     </div>
   )
+}
+
+async function logPlayers() {
+  console.log('getting player data');
+  const res = await fetch('http://localhost:80/api/allplayers' /*, {mode: 'no-cors'}*/);
+  console.log(res);
+  const allPlayers = await res.json();
+  console.log(allPlayers);
 }
