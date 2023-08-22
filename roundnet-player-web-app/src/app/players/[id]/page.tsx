@@ -16,7 +16,7 @@ export default function PlayerPage({params}: pageProps){
   const PERCENT_POINT_WINS = Math.round(player.points_won / (player.points_won + player.points_lost) * 100);
   return (
     <div>
-      <h1 className="text-center text-xl font-bold mb-10">{player.player_name}'s Stats</h1>
+      <h1 className="text-center text-xl font-bold mb-10">{player.player_name}&apos;s Stats</h1>
       <div className="flex justify-around">
         <StatMeter percent={PERCENT_GAME_WINS} label="Game Wins" />
         <StatMeter percent={PERCENT_SERIES_WINS} label="Series Wins" />
