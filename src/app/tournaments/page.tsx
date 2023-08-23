@@ -32,7 +32,7 @@ export default function TournamentsPage() {
       {!tournaments.length ? <h1 className="text-2xl font-bold text-center animate-pulse">Loading...</h1> : null}
       <div>
         {tournaments.map(tournament => 
-          <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-black hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-8">
+          <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100 hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-8">
               <div>
                 {tournament.date}
               </div>

@@ -21,7 +21,7 @@ export default function PlayerSelect() {
       <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {searchedPlayers.map(player => 
         <Link key={player} href={`/players/${player}`}>
-          <div className="text-gray-800 hover:text-black hover:scale-105 duration-100 ease-out">
+          <div className="text-gray-300 hover:text-white hover:scale-105 duration-100 ease-out">
             {firstLetterUpper(player)}
           </div>
         </Link>
