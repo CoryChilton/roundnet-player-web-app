@@ -5,11 +5,6 @@ import ConnectionPlayerSelect from "@/components/connections/ConnectionPlayerSel
 
 
 export default function Connections(){
-  // const [connection, setConnection] = useState(null);
-  // useEffect(() => {
-  //   fetchConnection().then(data => setConnection(data));
-  // }, []);
-  // console.log(connection);
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
   const playerClick1 = (e:any) => {
@@ -25,7 +20,10 @@ export default function Connections(){
       <h1 className="">
         Connections
       </h1>
-      <Link href={`/connections/source=${player1}&destination=${player2}`}>
+      <Link href={{
+        pathname: `/connections/${player1} ${player2}`,
+        query: {source: `${player1}`, destination: `${player2}`}
+      }}>
         <button className="bg-yellow-400 p-2 border border-black rounded-lg hover:bg-yellow-500 duration-200 ease-in-out">
           Find Connection!
         </button>
@@ -38,9 +36,3 @@ export default function Connections(){
   )
 }
 
-// async function fetchConnection() {
-//   console.log('Finding connection');
-//   const res = await fetch('http://localhost:80/api/graph/both?source=cory%20chilton&destination=arrow%20griner');
-//   const connection = await res.json();
-//   return connection;
-// }
