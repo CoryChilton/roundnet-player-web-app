@@ -24,7 +24,7 @@ export default function ConnectionPlayerSelect({
   return (
     <div className="flex flex-col items-center">
       <h3>
-        Selected Player: {selectedPlayer}
+        Selected Player: {firstLetterUpper(selectedPlayer)}
       </h3>
       <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {searchedPlayers.map(player => 
