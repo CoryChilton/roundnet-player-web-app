@@ -20,7 +20,7 @@ export default function ConnectionPage({params}: pageProps) {
   }, []);
 
   if (!connection.length) {
-    return <div className="text-center mt-10"><Loading /></div>
+    return <div className="text-center mt-20"><Loading /></div>
   }
   return (
     <div>
