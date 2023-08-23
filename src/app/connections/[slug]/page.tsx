@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation';
 import Node from "@/utilities/connection";
+import Loading from "@/components/general/Loading";
 
 interface pageProps{
   params: {slug: string}
@@ -19,7 +20,7 @@ export default function ConnectionPage({params}: pageProps) {
   }, []);
 
   if (!connection.length) {
-    return <h1 className="text-2xl font-bold text-center animate-bounce">Loading...</h1>
+    return <div className="text-center mt-10"><Loading /></div>
   }
   return (
     <div>
