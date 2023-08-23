@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { getAllPlayers, searchArray } from "@/utilities/utils";
+import { getAllPlayers, searchArray, firstLetterUpper } from "@/utilities/utils";
 
 export default function ConnectionPlayerSelect({
   selectedPlayer, 
@@ -29,7 +29,7 @@ export default function ConnectionPlayerSelect({
       <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {searchedPlayers.map(player => 
         <button onClick={playerClick} key={player} className="text-gray-700 hover:text-black hover:scale-105 duration-100 ease-out cursor-pointer">
-          {player}
+          {firstLetterUpper(player)}
         </button>
       )}
     </div>

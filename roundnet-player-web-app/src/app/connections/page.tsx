@@ -8,10 +8,10 @@ export default function Connections(){
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
   const playerClick1 = (e:any) => {
-    setPlayer1(e.target.textContent);
+    setPlayer1((e.target.textContent).toLowerCase());
   }
   const playerClick2 = (e:any) => {
-    setPlayer2(e.target.textContent);
+    setPlayer2((e.target.textContent).toLowerCase());
   }
 
 
@@ -24,7 +24,7 @@ export default function Connections(){
         pathname: `/connections/${player1} ${player2}`,
         query: {source: `${player1}`, destination: `${player2}`}
       }}>
-        <button className="bg-yellow-400 p-2 border border-black rounded-lg hover:bg-yellow-500 duration-200 ease-in-out">
+        <button disabled={!player1 || !player2} className="bg-yellow-400 p-2 border border-black rounded-lg enabled:hover:bg-yellow-500 duration-200 ease-in-out disabled:opacity-70 ">
           Find Connection!
         </button>
       </Link>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { getAllPlayers, searchArray } from "@/utilities/utils";
+import { getAllPlayers, searchArray, firstLetterUpper } from "@/utilities/utils";
 
 export default function PlayerSelect() {
   // state to control player search value
@@ -21,7 +21,7 @@ export default function PlayerSelect() {
       {searchedPlayers.map(player => 
         <Link key={player} href={`/players/${player}`}>
           <div className="text-gray-700 hover:text-black hover:scale-105 duration-100 ease-out">
-            {player}
+            {firstLetterUpper(player)}
           </div>
         </Link>
       )}
