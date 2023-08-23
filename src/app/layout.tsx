@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import Navbar from '@/components/layout/Navbar'
 
 export const metadata: Metadata = {
-  title: 'Roundnet Player Stats',
-  description: 'Find all of your roundnet stats',
+  title: 'Roundnet Player',
+  description: 'By the players for the players',
 }
 
 export default function RootLayout({
