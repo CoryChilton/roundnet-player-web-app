@@ -18,6 +18,11 @@ export default function Navbar() {
           Connections
         </button>
       </Link>
+      <Link href={"/tournaments"}>
+        <button>
+          Tournaments
+        </button>
+      </Link>
     </div>
   )
 }

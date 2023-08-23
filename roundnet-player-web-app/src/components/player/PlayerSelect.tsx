@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { getAllPlayers, searchArray, firstLetterUpper } from "@/utilities/utils";
@@ -20,7 +21,7 @@ export default function PlayerSelect() {
       <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {searchedPlayers.map(player => 
         <Link key={player} href={`/players/${player}`}>
-          <div className="text-gray-700 hover:text-black hover:scale-105 duration-100 ease-out">
+          <div className="text-gray-800 hover:text-black hover:scale-105 duration-100 ease-out">
             {firstLetterUpper(player)}
           </div>
         </Link>

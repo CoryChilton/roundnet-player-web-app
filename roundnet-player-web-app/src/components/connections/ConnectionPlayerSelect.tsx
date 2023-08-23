@@ -28,7 +28,7 @@ export default function ConnectionPlayerSelect({
       </h3>
       <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {searchedPlayers.map(player => 
-        <button onClick={playerClick} key={player} className="text-gray-700 hover:text-black hover:scale-105 duration-100 ease-out cursor-pointer">
+        <button onClick={playerClick} key={player} className="text-gray-800 hover:text-black hover:scale-105 duration-100 ease-out cursor-pointer">
           {firstLetterUpper(player)}
         </button>
       )}
