@@ -1,6 +1,6 @@
 'use client'
+import Link from "next/link";
 import { useState, useEffect } from "react";
-import { getAllPlayers, searchArray } from "@/utilities/utils";
 import ConnectionPlayerSelect from "@/components/connections/ConnectionPlayerSelect";
 
 
@@ -21,11 +21,16 @@ export default function Connections(){
 
 
   return (
-    <div>
-      <div className="text-center">
+    <div className="flex flex-col items-center">
+      <h1 className="">
         Connections
-      </div>
-      <div className="flex justify-around">
+      </h1>
+      <Link href={`/connections/source=${player1}&destination=${player2}`}>
+        <button className="bg-yellow-400 p-2 border border-black rounded-lg hover:bg-yellow-500 duration-200 ease-in-out">
+          Find Connection!
+        </button>
+      </Link>
+      <div className="flex gap-10">
         <ConnectionPlayerSelect selectedPlayer={player1} playerClick={playerClick1} />
         <ConnectionPlayerSelect selectedPlayer={player2} playerClick={playerClick2} />
       </div>
