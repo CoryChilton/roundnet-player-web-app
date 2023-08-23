@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -19,8 +20,25 @@ const config: Config = {
           "0 0px 65px rgba(255, 255,255, 0.2)"
         ]
       },
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+        glow: '0 0 10px var(--tw-shadow-color)'
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }:{matchUtilities:any, theme:any}) {
+      matchUtilities(
+        {
+          'text-shadow': (value:any) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 }
 export default config
