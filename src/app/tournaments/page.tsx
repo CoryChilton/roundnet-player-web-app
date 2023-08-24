@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Tournament from "@/utilities/tournament";
 import Link from "next/link";
+import Loading from "@/components/general/Loading";
 
 export default function TournamentsPage() {
   const [tournaments, setTournaments]:[Tournament[], any] = useState([]);
@@ -29,7 +30,7 @@ export default function TournamentsPage() {
       <p className="text-lg mb-4">
         The tournaments that are included in the connections and statistics shown on this website.
       </p>
-      {!tournaments.length ? <h1 className="text-2xl font-bold text-center animate-pulse">Loading...</h1> : null}
+      {!tournaments.length ? <Loading /> : null}
       <div>
         {tournaments.map(tournament => 
           <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100 hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-8">
