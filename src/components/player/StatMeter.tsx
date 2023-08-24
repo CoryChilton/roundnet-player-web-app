@@ -9,7 +9,10 @@ export default function StatMeter({percent, label}:{percent:
   return (
     <div className="relative w-64 aspect-square">
       <div>
-        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"><CountUp end={percent} duration={percent / 40} useEasing={false} />%<br/>{label}</h2>
+        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+          <span className="text-5xl font-semibold text-shadow-glow shadow-purple-500"><CountUp end={percent} duration={percent / 40} useEasing={false} />%</span><br/>
+          <span className="text-lg font-extralight">{label}</span>
+        </h2>
         {tickNums.map(i =>
           <Tick key={i} degRot={Math.round(i * 36) / 10} colored={i < percent } />
         )}
@@ -20,7 +23,7 @@ export default function StatMeter({percent, label}:{percent:
 
 function Tick({degRot, colored}:{degRot:number, colored:boolean}) {
   return (
-    <div className={`absolute left-1/2 w-[2px] h-4 origin-[50%_128px] opacity-0 animate-fade-in ${colored ? 'bg-yellow-500' : 'bg-gray-300'}`} style={{
+    <div className={`absolute left-1/2 w-[2px] h-6 origin-[50%_128px] opacity-0 animate-fade-in ${colored ? 'bg-yellow-400 drop-shadow-glow-bright shadow-yellow-500' : 'bg-gray-300'}`} style={{
       transform: `rotate(${degRot}deg)`, 
       animationDelay: `${degRot / 3.6 / 40}s`
     }}></div>

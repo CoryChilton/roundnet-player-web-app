@@ -18,7 +18,8 @@ const config: Config = {
         glow: [
           "0 0px 10px rgba(255,255, 255, 0.35)",
           // "0 0px 25px rgba(255, 255,255, 0.2)"
-        ]
+        ],
+        'glow-bright': '0 0 2px var(--tw-shadow-color)',
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
