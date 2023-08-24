@@ -1,23 +1,25 @@
 export default function StatMeter({percent, label}:{percent: number, label: string}){
-  const degrees = Array(100);
+  const tickNums = Array(100);
   for(let i = 0; i<100; i++) {
-    degrees[i] = Math.round(i * 36) / 10;
+    tickNums[i] = i;
   }
-  console.log(degrees);
   return (
-    <div className="relative bg-pink-800 w-64 aspect-square">
+    <div className="relative w-64 aspect-square">
       <div>
         <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">{percent}%<br/>{label}</h2>
-        {degrees.map(deg =>
-          <Tick key={deg} degRot={deg} />
+        {tickNums.map(i =>
+          <Tick key={i} degRot={Math.round(i * 36) / 10} colored={i < percent } />
         )}
       </div>
     </div>
   )
 }
 
-function Tick({degRot}:{degRot:number}) {
+function Tick({degRot, colored}:{degRot:number, colored:boolean}) {
   return (
-    <div className={`absolute left-1/2 w-[2px] h-4 bg-gray-300 origin-[50%_128px]`} style={{transform: `rotate(${degRot}deg)`}}></div>
+    <div className={`absolute left-1/2 w-[2px] h-4 origin-[50%_128px] opacity-0 animate-fade-in ${colored ? 'bg-yellow-500' : 'bg-gray-300'}`} style={{
+      transform: `rotate(${degRot}deg)`, 
+      animationDelay: `${degRot / 150}s`
+    }}></div>
   )
 }

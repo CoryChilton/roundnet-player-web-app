@@ -26,6 +26,14 @@ const config: Config = {
         lg: '0 8px 16px var(--tw-shadow-color)',
         glow: '0 0 10px var(--tw-shadow-color)'
       },
+      keyframes: {
+        fadeIn: {
+          '100%': {opacity: '1'},
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.1s linear forwards',
+      },
     },
   },
   plugins: [
