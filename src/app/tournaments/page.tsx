@@ -49,7 +49,7 @@ export default function TournamentsPage() {
 
 async function fetchAllTournaments() {
   console.log('Getting all tournaments');
-  const res = await fetch('http://localhost:80/tournaments/alltournaments');
+  const res = await fetch('http://104-238-213-70.cloud-xip.com/tournaments/alltournaments');
   const allTournaments = await res.json();
   return allTournaments;
 }

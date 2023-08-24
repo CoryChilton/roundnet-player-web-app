@@ -49,7 +49,7 @@ export default function PlayerPage({params}: pageProps){
 
 async function fetchPlayerData(playerName:string) {
   console.log('Getting data for: ' + playerName);
-  const res = await fetch(`http://localhost:80/api/players/${playerName}`);
+  const res = await fetch(`http://104-238-213-70.cloud-xip.com/api/players/${playerName}`);
   const playerData = await res.json();
   return playerData;
 }
