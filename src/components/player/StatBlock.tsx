@@ -14,7 +14,7 @@ export default function StatBlock({
   return (
     <div className="flex flex-col items-center">
       <StatMeter percent={percent} label={label} />
-      <div>{won} Won</div>
+      <div className="mt-4">{won} Won</div>
       <div>{lost} Lost</div>
     </div>
   )

@@ -20,14 +20,15 @@ export default function PlayerPage({params}: pageProps){
   const greatestWin = JSON.parse(player.greatest_point_diff_game_win);
   const longestOT = JSON.parse(player.longest_overtime_game);
   const closestSeries = JSON.parse(player.closest_series);
-  console.log(closestSeries);
   
   const PERCENT_GAME_WINS = Math.round(player.games_won / (player.games_won + player.games_lost) * 100);
   const PERCENT_SERIES_WINS = Math.round(player.series_won / (player.series_won + player.series_lost) * 100);
   const PERCENT_POINT_WINS = Math.round(player.points_won / (player.points_won + player.points_lost) * 100);
   return (
     <div>
-      <h1 className="text-center text-xl font-bold mb-10">{firstLetterUpper(player.player_name)}&apos;s Stats</h1>
+      <h1 className="text-center font-bold text-4xl mb-10 text-shadow-glow shadow-yellow-700 text-gray-100">
+        {firstLetterUpper(player.player_name)}&apos;s Stats
+      </h1>
       <div className="flex justify-around mb-10">
         <StatBlock percent={PERCENT_GAME_WINS} label="Game Wins" won={player.games_won} lost={player.games_lost} />
         <StatBlock percent={PERCENT_SERIES_WINS} label="Series Wins" won={player.series_won} lost={player.series_lost}/>
