@@ -5,6 +5,7 @@ import FeaturedGame from "@/components/player/FeaturedGame";
 import { defaultGame } from "@/utilities/game";
 import { defaultPlayer } from "@/utilities/player";
 import { firstLetterUpper } from "@/utilities/utils";
+import Loading from "@/components/general/Loading";
 
 interface pageProps{
   params: {name: string}
@@ -24,6 +25,9 @@ export default function PlayerPage({params}: pageProps){
   const PERCENT_GAME_WINS = Math.round(player.games_won / (player.games_won + player.games_lost) * 100);
   const PERCENT_SERIES_WINS = Math.round(player.series_won / (player.series_won + player.series_lost) * 100);
   const PERCENT_POINT_WINS = Math.round(player.points_won / (player.points_won + player.points_lost) * 100);
+  if (player === defaultPlayer){
+    return <div className="text-center mt-10"><Loading /></div>
+  }
   return (
     <div>
       <h1 className="text-center font-bold text-4xl mb-10 text-shadow-glow shadow-yellow-700 text-gray-100">
