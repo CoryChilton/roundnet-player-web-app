@@ -16,7 +16,7 @@ export default function ConnectionPage({params}: pageProps) {
   const destination = searchParams.get('destination');
 
   useEffect(() => {
-    fetchConnection(`http://104-238-213-70.cloud-xip.com/api/graph/both?source=${source}&destination=${destination}`).then(data => setConnection(data));
+    fetchConnection(`http://localhost:80/api/graph/both?source=${source}&destination=${destination}`).then(data => setConnection(data));
   }, []);
 
   if (!connection.length) {
