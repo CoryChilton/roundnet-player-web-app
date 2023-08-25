@@ -10,6 +10,10 @@ export default function FeaturedGame({
   game: Game
 }) {
 
+  if (!('team_1' in game)) {
+    return null;
+  }
+
   const players1 = JSON.parse(game.players_1);
   const players2 = JSON.parse(game.players_2);
 
