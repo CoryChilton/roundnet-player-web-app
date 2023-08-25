@@ -14,8 +14,8 @@ export default function Connections(){
   const playerClick2 = (e:any) => {
     setPlayer2((e.target.textContent).toLowerCase());
   }
-  const changeConnectionType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setConnectionType(e.target.value.toLowerCase());
+  const changeConnectionType = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.textContent && setConnectionType(e.currentTarget.textContent.toLowerCase());
   }
 
 
@@ -46,14 +46,15 @@ function ConnectionOptionMenu({
   changeConnectionType
 }:{
   connectionType:string, 
-  changeConnectionType: (e: React.ChangeEvent<HTMLSelectElement>) => void
+  changeConnectionType: (e: React.MouseEvent<HTMLButtonElement>) => void
 }) {
   return (
-    <select onChange={changeConnectionType} className="bg-black">
-      <option>Both</option>
-      <option>Teammates</option>
-      <option>Opponents</option>
-    </select>
+    <div>
+      <h1>{connectionType}</h1>
+      <button onClick={changeConnectionType}>Both</button>
+      <button onClick={changeConnectionType}>Teammates</button>
+      <button onClick={changeConnectionType}>Opponents</button>
+    </div>
   )
 }
 
