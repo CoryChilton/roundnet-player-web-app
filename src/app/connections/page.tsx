@@ -9,10 +9,10 @@ export default function Connections(){
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
   const playerClick1 = (e:any) => {
-    setPlayer1((e.target.textContent).toLowerCase());
+    setPlayer1((e.target.value).toLowerCase());
   }
   const playerClick2 = (e:any) => {
-    setPlayer2((e.target.textContent).toLowerCase());
+    setPlayer2((e.target.value).toLowerCase());
   }
   const changeConnectionType = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.textContent && setConnectionType(e.currentTarget.textContent.toLowerCase());
@@ -34,8 +34,14 @@ export default function Connections(){
         </button>
       </Link>
       <div className="flex gap-10">
-        <ConnectionPlayerSelect selectedPlayer={player1} playerClick={playerClick1} />
-        <ConnectionPlayerSelect selectedPlayer={player2} playerClick={playerClick2} />
+        <div className="flex flex-col items-center">
+          <h3>First Player:</h3>
+          <ConnectionPlayerSelect selectedPlayer={player1} playerClick={playerClick1} />
+        </div>
+        <div className="flex flex-col items-center">
+          <h3>Second Player:</h3>
+          <ConnectionPlayerSelect selectedPlayer={player2} playerClick={playerClick2} />
+        </div>
       </div>
     </div>
   )
@@ -50,10 +56,10 @@ function ConnectionOptionMenu({
 }) {
   return (
     <div className="flex flex-col items-start relative">
-      <button onClick={changeConnectionType}>Both</button>
-      <button onClick={changeConnectionType}>Teammates</button>
-      <button onClick={changeConnectionType}>Opponents</button>
-      <div className={`absolute border border-white h-6 w-24 top-0 -left-1 ${connectionType === 'teammates' && 'translate-y-full'} ${connectionType === 'opponents' && 'translate-y-[200%]'} ${connectionType === 'both' && 'translate-y-0'}`} style={{transition: 'transform .3s ease-out'}}/>
+      <button className="z-10" onClick={changeConnectionType}>Both</button>
+      <button className="z-10" onClick={changeConnectionType}>Teammates</button>
+      <button className="z-10" onClick={changeConnectionType}>Opponents</button>
+      <div className={`absolute border border-white h-6 w-24 top-0 -left-1 z-0 ${connectionType === 'teammates' && 'translate-y-full'} ${connectionType === 'opponents' && 'translate-y-[200%]'} ${connectionType === 'both' && 'translate-y-0'}`} style={{transition: 'transform .3s ease-out'}}/>
     </div>
   )
 }
