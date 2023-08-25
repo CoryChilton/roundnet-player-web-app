@@ -33,7 +33,7 @@ export default function PlayerPage({params}: pageProps){
       <h1 className="text-center font-bold text-4xl mb-10 text-shadow-glow shadow-yellow-700 text-gray-100">
         {firstLetterUpper(player.player_name)}&apos;s Stats
       </h1>
-      <div className="flex justify-around mb-10">
+      <div className="flex justify-around mb-10 flex-wrap gap-10">
         <StatBlock percent={PERCENT_GAME_WINS} label="Game Wins" won={player.games_won} lost={player.games_lost} />
         <StatBlock percent={PERCENT_SERIES_WINS} label="Series Wins" won={player.series_won} lost={player.series_lost}/>
         <StatBlock percent={PERCENT_POINT_WINS} label="Point Wins" won={player.points_won} lost={player.points_lost} />
