@@ -23,7 +23,7 @@ export default function StatMeter({percent, label}:{percent:
 
 function Tick({degRot, colored}:{degRot:number, colored:boolean}) {
   return (
-    <div className={`absolute left-1/2 w-[2px] h-4 origin-[50%_128px] opacity-0 animate-fade-in rounded-full ${colored ? 'bg-yellow-400 drop-shadow-glow-bright shadow-yellow-500' : 'bg-gray-300'}`} style={{
+    <div className={`absolute left-1/2 w-[2px] h-4 origin-[50%_128px] opacity-0 animate-fade-in rounded-full ${colored ? 'bg-yellow-300 drop-shadow-glow-bright shadow-yellow-300' : 'bg-gray-700'}`} style={{
       transform: `rotate(${degRot}deg)`, 
       animationDelay: `${degRot / 3.6 / 40}s`
     }}></div>
