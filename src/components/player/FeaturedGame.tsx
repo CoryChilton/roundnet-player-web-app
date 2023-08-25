@@ -14,7 +14,7 @@ export default function FeaturedGame({
   const players2 = JSON.parse(game.players_2);
 
   return (
-    <div className="flex flex-col w-[40rem] items-center border-gray-200 shadow-glow shadow-pink-300">
+    <div className="flex flex-col w-[40rem] items-center border-gray-200 shadow-glow shadow-pink-300 p-2">
       <h2 className="text-2xl text-gray-200 text-shadow-glow shadow-yellow-700 mb-2">{title}</h2>
       <div className="flex items-start gap-10 w-full">
         <ScoreTeamPlayers score={game.score_1} team={game.team_1} players={players1} />
