@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Tournament from "@/utilities/tournament";
 import Link from "next/link";
 import Loading from "@/components/general/Loading";
+import { tournamentDict } from "@/utilities/tournament";
 
 export default function TournamentsPage() {
   const [tournaments, setTournaments]:[Tournament[], any] = useState([]);
@@ -38,7 +39,7 @@ export default function TournamentsPage() {
                 {tournament.date}
               </div>
               <div>
-                {tournament.tournament_name}
+                {tournamentDict.get(tournament.tournament_name)}
               </div>
           </Link>
         )}

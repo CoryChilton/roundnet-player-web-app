@@ -27,6 +27,9 @@ const config: Config = {
         lg: '0 8px 16px var(--tw-shadow-color)',
         glow: '0 0 10px var(--tw-shadow-color)'
       },
+      boxShadow: {
+        glow: '0 0 10px 0px var(--tw-shadow-color)',
+      },
       keyframes: {
         fadeIn: {
           '100%': {opacity: '1'},
