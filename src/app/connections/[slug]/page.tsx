@@ -15,9 +15,10 @@ export default function ConnectionPage({params}: pageProps) {
   const searchParams = useSearchParams();
   const source:string = searchParams.get('source') || 'player1';
   const destination:string = searchParams.get('destination') || 'player2';
+  const connectionType:string = searchParams.get('connectionType') || 'both';
 
   useEffect(() => {
-    fetchConnection(`http://localhost:80/api/graph/both?source=${source}&destination=${destination}`).then(data => setConnection(data));
+    fetchConnection(`http://localhost:80/api/graph/${connectionType}?source=${source}&destination=${destination}`).then(data => setConnection(data));
   }, []);
 
   if(!connection.length) {
