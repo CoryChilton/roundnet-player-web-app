@@ -10,7 +10,7 @@ export default function StatMeter({percent, label}:{percent:
     <div className="relative w-64 aspect-square">
       <div>
         <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <span className="text-6xl font-semibold text-shadow-glow shadow-purple-500"><CountUp end={percent} duration={percent / 40} useEasing={false} />%</span><br/>
+          <span className="text-6xl font-semibold text-shadow-glow shadow-purple-500 text-gray-100"><CountUp end={percent} duration={percent / 40} useEasing={false} />%</span><br/>
           <span className="text-lg font-extralight text-gray-300">{label}</span>
         </h2>
         {tickNums.map(i =>

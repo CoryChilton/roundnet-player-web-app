@@ -1,4 +1,6 @@
 import Game from "@/utilities/game"
+import { firstLetterUpper } from "@/utilities/utils"
+import { tournamentDict } from "@/utilities/tournament";
 
 export default function FeaturedGame({
   title,
@@ -7,15 +9,44 @@ export default function FeaturedGame({
   title: string,
   game: Game
 }) {
+
+  const players1 = JSON.parse(game.players_1);
+  const players2 = JSON.parse(game.players_2);
+
   return (
-    <div className="flex flex-col items-center w-96 grow shrink-0">
-      <div className="font-semibold">
-        {title}
+    <div className="flex flex-col items-center">
+      <h2 className="text-2xl text-gray-100 text-shadow-glow shadow-yellow-700 mb-2">{title}</h2>
+      <div className="flex items-start gap-10">
+        <ScoreTeamPlayers score={game.score_1} team={game.team_1} players={players1} />
+        <div className="flex flex-col items-center">
+          <div className="text-lg text-gray-500">vs</div>
+          <div className="text-gray-500 font-bold text-3xl">-</div>
+        </div>
+        
+        <ScoreTeamPlayers score={game.score_2} team={game.team_2} players={players2} />
       </div>
-      <div>{game.team_1} {game.players_1} {game.score_1}</div>
-      <div>{game.team_2} {game.players_2} {game.score_2}</div>
-      <div>{game.tournament_name}</div>
-      <div>{game.tournament_stage} {game.division}</div>
+      <h3 className="text-gray-300">
+        {tournamentDict.get(game.tournament_name)} ({game.division})
+      </h3>
+      <h4 className="text-gray-300 font-light">
+        {firstLetterUpper(game.tournament_stage)}
+      </h4>
+    </div>
+  )
+}
+
+function ScoreTeamPlayers({score, team, players}:{score:number, team:string, players:string[]}) {
+  return (
+    <div className="flex flex-col items-center">
+      <h4 className="text-lg text-gray-200 font-light">
+        {team}
+      </h4>
+      <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold">
+        {score}
+      </h3>
+      <h4 className="text-gray-300 font-extralight">
+        {firstLetterUpper(players[0])} and {firstLetterUpper(players[1])}
+      </h4>
     </div>
   )
 }
