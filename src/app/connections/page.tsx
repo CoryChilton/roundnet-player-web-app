@@ -21,7 +21,7 @@ export default function Connections(){
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="">
+      <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
         Connections
       </h1>
       <ConnectionOptionMenu connectionType={connectionType} changeConnectionType={changeConnectionType} />
@@ -29,7 +29,7 @@ export default function Connections(){
         pathname: `/connections/${player1} ${player2}`,
         query: {source: `${player1}`, destination: `${player2}`, connectionType: `${connectionType}`}
       }}>
-        <button disabled={!player1 || !player2} className="bg-yellow-400 p-2 border border-black rounded-lg enabled:hover:bg-yellow-500 duration-200 ease-in-out disabled:opacity-70 ">
+        <button disabled={!player1 || !player2} className="bg-yellow-400 p-2 border border-black rounded-lg enabled:hover:bg-yellow-500 duration-200 ease-in-out disabled:opacity-70 mt-4">
           Find Connection!
         </button>
       </Link>
@@ -49,11 +49,11 @@ function ConnectionOptionMenu({
   changeConnectionType: (e: React.MouseEvent<HTMLButtonElement>) => void
 }) {
   return (
-    <div>
-      <h1>{connectionType}</h1>
+    <div className="flex flex-col items-start relative">
       <button onClick={changeConnectionType}>Both</button>
       <button onClick={changeConnectionType}>Teammates</button>
       <button onClick={changeConnectionType}>Opponents</button>
+      <div className={`absolute border border-white h-6 w-24 top-0 -left-1 ${connectionType === 'teammates' && 'translate-y-full'} ${connectionType === 'opponents' && 'translate-y-[200%]'} ${connectionType === 'both' && 'translate-y-0'}`} style={{transition: 'transform .3s ease-out'}}/>
     </div>
   )
 }
