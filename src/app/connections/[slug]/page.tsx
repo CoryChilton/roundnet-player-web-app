@@ -1,25 +1,28 @@
 'use client';
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation';
-import Node from "@/utilities/connection";
+import Node, { defaultNode } from "@/utilities/connection";
 import Loading from "@/components/general/Loading";
+import { firstLetterUpper } from "@/utilities/utils";
 
 interface pageProps{
   params: {slug: string}
 }
 
 export default function ConnectionPage({params}: pageProps) {
-  const [connection, setConnection]:[Node[], any] = useState([]);
+  const [connection, setConnection]:[Node[], any] = useState([defaultNode]);
 
   const searchParams = useSearchParams();
-  const source = searchParams.get('source');
-  const destination = searchParams.get('destination');
+  const source:string = searchParams.get('source') || 'player1';
+  const destination:string = searchParams.get('destination') || 'player2';
 
   useEffect(() => {
     fetchConnection(`http://localhost:80/api/graph/both?source=${source}&destination=${destination}`).then(data => setConnection(data));
   }, []);
 
-  if (!connection.length) {
+  if(!connection.length) {
+    return <div className="text-center mt-20 text-red-400 text-3xl text-shadow-glow shadow-red-700 mx-20">{`No connection found between ${source} and ${destination}`.toUpperCase()}</div>
+  } else if (connection[0] === defaultNode) {
     return <div className="text-center mt-20"><Loading /></div>
   }
   return (

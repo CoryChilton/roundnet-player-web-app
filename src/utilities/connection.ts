@@ -8,3 +8,10 @@ export default interface Node {
   game?: Game;
   tournament?: string;
 }
+
+export const defaultNode:Node = {
+  node1: 1,
+  node2: 1,
+  player1: '',
+  player2: ''
+}
