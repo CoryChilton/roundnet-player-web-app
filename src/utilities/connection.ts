@@ -1,11 +1,9 @@
-import Game from "./game";
-
 export default interface Node {
   node1: number;
   node2: number;
   player1: string;
   player2: string;
-  game?: Game; // opponent nodes have this
+  game?: string; // opponent nodes have this
   tournament?: string; // teammate nodes have this
 }
 

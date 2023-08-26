@@ -45,25 +45,22 @@ export default function ConnectionPage({params}: pageProps) {
     }
   }
 
-  console.log(player1ListedFirst);
-
-
   return (
     <div className="flex flex-col items-center mb-10">
       <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
         {firstLetterUpper(source)} &rarr; {firstLetterUpper(destination)}
       </h1>
       <h2 className="text-3xl font-extralight text-gray-400 mb-10">
-        Via {connectionType === 'teammates' ? 'teammates' : connectionType === 'opponents' ? 'opponents' : 'teammates and opponents'}
+        Via {connectionType === 'teammates' ? 'teammates' : connectionType === 'opponents' ? 'opponents' : 'both teammates and opponents'}
       </h2>
       {connection.map((node, i) =>
         <div key={i} className="flex flex-col items-center">
           {'tournament' in node ? 
             <TeamNode node={node} player1ListedFirst={player1ListedFirst[i]} /> 
           : 
-            <OpponentNode node={node} />
+            <OpponentNode node={node} player1ListedFirst={player1ListedFirst[i]} />
           }
-          {i !== connection.length - 1 && <div className="w-px h-36 bg-purple-400 shadow-glow shadow-white" />}
+          {i !== connection.length - 1 && <div className="w-px h-40 bg-gray-400 shadow-glow shadow-white" />}
         </div>
       )}
     </div>
