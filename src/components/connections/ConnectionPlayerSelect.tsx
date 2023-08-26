@@ -7,9 +7,11 @@ import { list } from "postcss";
 export default function ConnectionPlayerSelect({
   selectedPlayer, 
   playerClick,
+  listId,
 } : {
   selectedPlayer: string,
   playerClick: (e:any) => void,
+  listId: string,
 }) {
   // state to control player search value
   const [searchInput, setSearchInput] = useState('');
@@ -24,19 +26,18 @@ export default function ConnectionPlayerSelect({
   searchedPlayers.sort();
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center relative">
       <h3>
-        {firstLetterUpper(selectedPlayer)}
+        {selectedPlayer ? firstLetterUpper(selectedPlayer) : 'Select Player'}
       </h3>
-      <input className="border border-black" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-      {!players.length ? <div className="mt-6"><Loading /></div> : null}
-      <select onChange={playerClick} className="bg-inherit border border-white">
-        {searchedPlayers.map(player => 
-          <option key={player} onMouseOver={() => alert('working')}>
-            {firstLetterUpper(player)}
-          </option>
-        )}
-      </select>
+      <div>
+        <input value={selectedPlayer} onChange={playerClick} list={listId} placeholder="select an option" />
+        <datalist id={listId}>
+          {searchedPlayers.map(player => 
+            <option key={player} value={firstLetterUpper(player)} />  
+          )}
+        </datalist>
+      </div>
     </div>
   )
 }

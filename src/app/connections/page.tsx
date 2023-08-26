@@ -36,11 +36,11 @@ export default function Connections(){
       <div className="flex gap-10">
         <div className="flex flex-col items-center">
           <h3>First Player:</h3>
-          <ConnectionPlayerSelect selectedPlayer={player1} playerClick={playerClick1} />
+          <ConnectionPlayerSelect selectedPlayer={player1} playerClick={playerClick1} listId="1" />
         </div>
         <div className="flex flex-col items-center">
           <h3>Second Player:</h3>
-          <ConnectionPlayerSelect selectedPlayer={player2} playerClick={playerClick2} />
+          <ConnectionPlayerSelect selectedPlayer={player2} playerClick={playerClick2} listId="2" />
         </div>
       </div>
     </div>
