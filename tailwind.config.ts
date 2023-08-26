@@ -25,7 +25,8 @@ const config: Config = {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',
-        glow: '0 0 10px var(--tw-shadow-color)'
+        glow: '0 0 10px var(--tw-shadow-color)',
+        none: 'none'
       },
       boxShadow: {
         glow: '0 0 10px 0px var(--tw-shadow-color)',
