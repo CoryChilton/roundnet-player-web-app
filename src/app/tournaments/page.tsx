@@ -17,21 +17,16 @@ export default function TournamentsPage() {
     }
     return 1;
     });
-
-  // if (!tournaments.length) {
-  //   console.log('hello')
-  //   return <h1 className="text-2xl font-bold text-center animate-pulse">Loading...</h1>
-  // }
   return (
 
     <div className="flex flex-col items-center">
-      <h1 className="font-bold text-2xl mb-4">
+      <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
         Tournaments
       </h1>
       <p className="text-lg mb-4">
         The tournaments that are included in the connections and statistics shown on this website.
       </p>
-      {!tournaments.length ? <Loading /> : null}
+      {!tournaments.length && <Loading />}
       <div>
         {tournaments.map(tournament => 
           <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100 hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-8">

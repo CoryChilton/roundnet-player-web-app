@@ -5,8 +5,8 @@ export default interface Node {
   node2: number;
   player1: string;
   player2: string;
-  game?: Game;
-  tournament?: string;
+  game?: Game; // opponent nodes have this
+  tournament?: string; // teammate nodes have this
 }
 
 export const defaultNode:Node = {
