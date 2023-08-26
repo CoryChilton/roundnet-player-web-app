@@ -45,7 +45,7 @@ export default function TournamentsPage() {
 
 async function fetchAllTournaments() {
   console.log('Getting all tournaments');
-  const res = await fetch('http://localhost:80/tournaments/alltournaments');
+  const res = await fetch('https://roundnetplayerwebapp-slti25qgza-uc.a.run.app/tournaments/alltournaments');
   const allTournaments = await res.json();
   return allTournaments;
 }

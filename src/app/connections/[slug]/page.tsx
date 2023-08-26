@@ -19,7 +19,7 @@ export default function ConnectionPage({params}: pageProps) {
 
   const [connection, setConnection]:[Node[], any] = useState([defaultNode]);
   useEffect(() => {
-    fetchConnection(`http://localhost:80/api/graph/${connectionType}?source=${source}&destination=${destination}`).then(data => setConnection(data));
+    fetchConnection(`https://roundnetplayerwebapp-slti25qgza-uc.a.run.app/api/graph/${connectionType}?source=${source}&destination=${destination}`).then(data => setConnection(data));
   }, []);
 
   if(!connection.length) {

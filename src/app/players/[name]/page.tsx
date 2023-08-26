@@ -49,7 +49,7 @@ export default function PlayerPage({params}: pageProps){
 
 async function fetchPlayerData(playerName:string) {
   console.log('Getting data for: ' + playerName);
-  const res = await fetch(`http://localhost:80/api/players/${playerName}`);
+  const res = await fetch(`https://roundnetplayerwebapp-slti25qgza-uc.a.run.app/api/players/${playerName}`);
   const playerData = await res.json();
   return playerData;
 }

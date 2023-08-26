@@ -12,7 +12,7 @@ export function firstLetterUpper(s:string) {
 
 export async function getAllPlayers() {
   console.log('Getting all player names');
-  const res = await fetch('http://localhost:80/api/allplayers' /*, {mode: 'no-cors'}*/);
+  const res = await fetch('https://roundnetplayerwebapp-slti25qgza-uc.a.run.app/api/allplayers' /*, {mode: 'no-cors'}*/);
   const allPlayers = await res.json();
   return allPlayers;
 }
