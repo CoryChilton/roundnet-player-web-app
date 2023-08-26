@@ -23,13 +23,13 @@ export default function TournamentsPage() {
       <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
         Tournaments
       </h1>
-      <p className="text-lg mb-4">
+      <p className="text-lg mb-4 text-gray-300">
         The tournaments that are included in the connections and statistics shown on this website.
       </p>
       {!tournaments.length && <Loading />}
-      <div>
+      <div className="flex flex-col gap-px">
         {tournaments.map(tournament => 
-          <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100 hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-8">
+          <Link key={tournament.tournament_name} href={tournament.url}target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100 hover:scale-105 duration-100 ease-out flex flex-row justify-between gap-x-8">
               <div>
                 {tournament.date}
               </div>
