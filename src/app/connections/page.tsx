@@ -32,11 +32,12 @@ export default function Connections(){
           <ConnectionPlayerSelect label="Second Player:" selectedPlayer={player2} playerClick={playerClick2} listId="2" />
       </div>
       <ConnectionOptionMenu connectionType={connectionType} changeConnectionType={changeConnectionType} />
+      <div className="mt-16"/>
       <Link href={{
         pathname: `/connections/${player1} ${player2}`,
         query: {source: `${player1.toLowerCase()}`, destination: `${player2.toLowerCase()}`, connectionType: `${connectionType}`}
-      }}>
-        <button disabled={!player1 || !player2} className="tut-button mt-16 text-3xl text-pink-400 border-2 border-pink-400 px-8 py-3 rounded-lg text-shadow-tut shadow-tut shadow-pink-400 relative before:content-[''] before:absolute before:bg-pink-400 before:top-[120%] before:left-0 before:w-full before:h-full before:opacity-70 enabled:hover:before:opacity-100 before:duration-100 enabled:hover:text-[rgb(13,14,18)] enabled:hover:text-shadow-none enabled:hover:after:opacity-100 disabled:opacity-50 enabled:duration-500 disabled:before:opacity-0 disabled:before:duration-700 disabled:duration-500">
+      }} className="">
+        <button disabled={!player1 || !player2} className="tut-button text-3xl text-pink-400 border-2 border-pink-400 px-8 py-3 rounded-lg text-shadow-tut shadow-tut shadow-pink-400 relative before:content-[''] before:absolute before:bg-pink-400 before:top-[120%] before:left-0 before:w-full before:h-full before:opacity-70 enabled:hover:before:opacity-100 before:duration-100 enabled:hover:text-[rgb(13,14,18)] enabled:hover:text-shadow-none enabled:hover:after:opacity-100 disabled:opacity-50 enabled:duration-500 disabled:before:opacity-0 disabled:before:duration-700 disabled:duration-500">
           Find Connection
         </button>
       </Link>
