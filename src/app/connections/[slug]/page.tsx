@@ -47,10 +47,13 @@ export default function ConnectionPage({params}: pageProps) {
 
   return (
     <div className="flex flex-col items-center mb-10">
-      <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
+      <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100 text-center hidden md:block">
         {firstLetterUpper(source)} &rarr; {firstLetterUpper(destination)}
       </h1>
-      <h2 className="text-3xl font-extralight text-gray-400 mb-10">
+      <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100 text-center block md:hidden leading-snug">
+        {firstLetterUpper(source)}<br />&darr;<br />{firstLetterUpper(destination)}
+      </h1>
+      <h2 className="text-3xl font-extralight text-gray-400 mb-10 text-center px-4">
         Via {connectionType === 'teammates' ? 'teammates' : connectionType === 'opponents' ? 'opponents' : 'both teammates and opponents'}
       </h2>
       {connection.map((node, i) =>

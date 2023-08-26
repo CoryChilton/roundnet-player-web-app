@@ -16,8 +16,8 @@ export default function OpponentNode({node, player1ListedFirst}:{node:Node, play
     console.log(game)
   }
   return (
-    <div className="border border-gray-300 shadow-glow shadow-red-500 h-96 flex flex-col items-center justify-around py-4 rounded-3xl aspect-square text-center">
-      <h4 className="text-xl text-gray-300 font-light">
+    <div className="border border-gray-300 shadow-glow shadow-red-500 h-80 sm:h-96 flex flex-col items-center justify-around py-4 px-2 rounded-3xl aspect-square text-center">
+      <h4 className="text-xl text-gray-300 font-light text-center">
         <span className="font-thin text-gray-400">Team: </span>{game.team_1}
       </h4>
       <h3 className="text-2xl text gray-300 text-shadow-glow shadow-pink-500 text-center">
@@ -36,7 +36,7 @@ export default function OpponentNode({node, player1ListedFirst}:{node:Node, play
         <h5 className="font-thin text-gray-500">
           at
         </h5>
-        <h4 className="text-xl text-gray-300 font-extralight">
+        <h4 className="text-xl text-gray-300 font-extralight text-center">
           {tournamentDict.get(game.tournament_name)}
         </h4> 
         <span className="font-thin text-gray-500">
