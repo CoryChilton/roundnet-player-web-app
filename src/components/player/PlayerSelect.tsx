@@ -28,11 +28,11 @@ export default function PlayerSelect() {
         </h1>
       :
         null}
-      <ul className="text-center px-10">
+      <ul className="text-center px-2 md:px-10">
         {searchedPlayers.map(player => 
           <li key={player} className="odd:text-gray-400 even:text-yellow-600 inline-block">
           <Link  href={`/players/${player}`}>
-              <div className="hover:scale-110 duration-75 ease-out inline-block hover:text-shadow-glow shadow-yellow-600 text-lg px-3 py-1 font-thin hover:text-gray-200">
+              <div className="hover:scale-110 duration-75 ease-out inline-block hover:text-shadow-glow shadow-yellow-600 text-sm md:text-lg px-3 py-1 font-thin hover:text-gray-200">
                 {firstLetterUpper(player)}
               </div>
           </Link>
