@@ -11,6 +11,26 @@ input {
   color: black;
 }
 
+.tut-button::before {
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1.5em);
+  pointer-events: none;
+}
+
+.tut-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em #f472b6;
+  opacity: 0;
+  background-color: #f472b6;
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

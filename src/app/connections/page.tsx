@@ -36,8 +36,8 @@ export default function Connections(){
         pathname: `/connections/${player1} ${player2}`,
         query: {source: `${player1.toLowerCase()}`, destination: `${player2.toLowerCase()}`, connectionType: `${connectionType}`}
       }}>
-        <button disabled={!player1 || !player2} className="bg-yellow-400 p-2 border border-black rounded-lg enabled:hover:bg-yellow-500 duration-200 ease-in-out disabled:opacity-70 mt-8">
-          Find Connection!
+        <button disabled={!player1 || !player2} className="tut-button mt-16 text-3xl text-pink-400 border-2 border-pink-400 px-8 py-3 rounded-lg text-shadow-tut shadow-tut shadow-pink-400 relative before:content-[''] before:absolute before:bg-pink-400 before:top-[120%] before:left-0 before:w-full before:h-full before:opacity-70 enabled:hover:before:opacity-100 before:duration-100 enabled:hover:text-[rgb(13,14,18)] enabled:hover:text-shadow-none enabled:hover:after:opacity-100 disabled:opacity-50 enabled:duration-500 disabled:before:opacity-0 disabled:before:duration-700 disabled:duration-500">
+          Find Connection
         </button>
       </Link>
     </div>
