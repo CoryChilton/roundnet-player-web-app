@@ -20,14 +20,14 @@ export default function Connections(){
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mb-40">
       <h1 className="font-bold text-4xl mb-4 text-shadow-glow shadow-yellow-700 text-gray-100">
         Connections
       </h1>
-      <h2 className="text-gray-300 text-lg mb-6">
+      <h2 className="text-gray-300 text-lg mb-6 text-center px-2">
         Choose which players you would like to find the connection between:
       </h2>
-      <div className="flex mb-10 gap-8">
+      <div className="flex flex-col md:flex-row mb-10 gap-8">
           <ConnectionPlayerSelect label="First Player:" selectedPlayer={player1} playerClick={playerClick1} listId="1" />
           <ConnectionPlayerSelect label="Second Player:" selectedPlayer={player2} playerClick={playerClick2} listId="2" />
       </div>

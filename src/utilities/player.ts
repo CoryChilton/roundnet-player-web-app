@@ -9,11 +9,11 @@ export default interface Player {
   series_lost: number;
   points_won: number;
   points_lost: number;
-  greatest_point_diff_game_loss: '';
-  greatest_point_diff_game_win: '';
-  longest_overtime_game: '';
-  closest_series: '';
-  past_tournaments: '';
+  greatest_point_diff_game_loss: string;
+  greatest_point_diff_game_win: string;
+  longest_overtime_game: string;
+  closest_series: string;
+  past_tournaments: string;
 }
 
 export const defaultPlayer = {
