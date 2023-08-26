@@ -3,8 +3,8 @@ import Image from "next/image"
 
 export default function Navbar() {
   return (
-    <div className="px-16 py-4 mb-4 flex flex-row items-center justify-between sticky top-0 bg-inherit border-b border-gray-600 z-10">
-      <Link href="/" className="flex flex-row items-center hover:text-gray-300 duration-200">
+    <div className="px-16 py-4 mb-4 flex flex-col md:flex-row items-center justify-between sticky top-0 bg-inherit border-b border-gray-600 z-10">
+      <Link href="/" className="flex flex-row items-center hover:text-gray-300 duration-200 mb-2 md:mb-0">
         <Image src="/logo.png" alt="logo" width={20} height={20} className="inline-block " />
         <h1 className="text-xl font-semibold inline-block ml-2 whitespace-nowrap text-shadow-glow shadow-yellow-700">
           Roundent Player
