@@ -22,7 +22,7 @@ export default function FeaturedGame({
       <h2 className="text-2xl text-gray-200 text-shadow-glow shadow-yellow-700 mb-2">{title}</h2>
       <div className="flex items-start justify-center w-full">
         <ScoreTeamPlayers score={game.score_1} team={game.team_1} players={players1} />
-        <div className="flex flex-col items-center bg-red-800">
+        <div className="flex flex-col items-center">
           <div className="text-lg text-gray-500">vs</div>
           <div className="text-gray-500 font-bold text-3xl mt-5">-</div>
         </div>
@@ -40,8 +40,8 @@ export default function FeaturedGame({
 
 function ScoreTeamPlayers({score, team, players}:{score:number, team:string, players:string[]}) {
   return (
-    <div className="flex flex-col items-center w-1/2 bg-slate-600">
-      <h4 className="text-lg text-gray-300 font-light mb-4 text-center break-words">
+    <div className="flex flex-col items-center w-1/2 px-1">
+      <h4 className="text-lg text-gray-300 font-light mb-4 text-center w-full break-words balance">
         {team}
       </h4>
       <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold mb-4">
