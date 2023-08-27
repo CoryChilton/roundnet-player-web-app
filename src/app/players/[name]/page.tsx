@@ -6,6 +6,7 @@ import { defaultGame } from "@/utilities/game";
 import { defaultPlayer } from "@/utilities/player";
 import { firstLetterUpper } from "@/utilities/utils";
 import Loading from "@/components/general/Loading";
+import FeaturedSeries from "@/components/player/FeaturedSeries";
 
 interface pageProps{
   params: {name: string}
@@ -42,6 +43,7 @@ export default function PlayerPage({params}: pageProps){
         <FeaturedGame title="Greatest Win" game={greatestWin} />
         <FeaturedGame title="Worst Loss" game={greatestLoss} />
         <FeaturedGame title="Longest Overtime" game={longestOT} />
+        <FeaturedSeries title="Closest Series" series={closestSeries} />
       </div>
     </div>
   )
