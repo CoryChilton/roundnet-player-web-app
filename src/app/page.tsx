@@ -11,7 +11,7 @@ export default function Home() {
       </h3>
       <div className="max-w-3xl">
         <Link href="/players">
-          <button className="block text-left w-full outline outline-purple-400 mb-4 py-2 px-3 rounded-xl shadow-tut text-purple-400 text-shadow-glow shadow-purple-400 hover:scale-x-105 hover:text-[rgb(13,14,18)] transition relative before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-xl before:bg-purple-400 before:opacity-0 hover:before:opacity-100 before:transition before:duration-200 before:-z-10">
+          <button className="block text-left w-full outline outline-purple-400 mb-4 py-2 px-3 rounded-xl shadow-tut text-purple-400 text-shadow-glow shadow-purple-400 hover:scale-x-105 hover:text-[rgb(13,14,18)] transition relative before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-lg before:bg-purple-400 before:opacity-0 hover:before:opacity-100 before:transition before:duration-200 before:-z-10">
             <h2 className="text-4xl font-bold">
               Players
             </h2>
@@ -19,7 +19,7 @@ export default function Home() {
           </button>
         </Link>
         <Link href="/connections" className="bg-white">
-          <button className="block text-left w-full outline outline-pink-400 mb-6 py-2 px-3 rounded-xl shadow-tut text-pink-500 text-shadow-glow shadow-pink-500 hover:scale-x-105 hover:text-[rgb(13,14,18)] transition relative before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-xl before:bg-pink-500 before:opacity-0 hover:before:opacity-100 before:transition before:duration-200 before:-z-10">
+          <button className="block text-left w-full outline outline-pink-400 mb-6 py-2 px-3 rounded-xl shadow-tut text-pink-500 text-shadow-glow shadow-pink-500 hover:scale-x-105 hover:text-[rgb(13,14,18)] transition relative before:content-[''] before:absolute before:rounded-lg before:left-0 before:top-0 before:h-full before:w-full  before:bg-pink-500 before:opacity-0 hover:before:opacity-100 before:transition before:duration-200 before:-z-10">
             <h2 className="text-4xl font-bold">
               Connections
             </h2>
