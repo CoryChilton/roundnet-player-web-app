@@ -38,7 +38,7 @@ export default function PlayerPage({params}: pageProps){
         <StatBlock percent={PERCENT_SERIES_WINS} label="Series Wins" won={player.series_won} lost={player.series_lost}/>
         <StatBlock percent={PERCENT_POINT_WINS} label="Point Wins" won={player.points_won} lost={player.points_lost} />
       </div>
-      <div className="flex justify-center gap-10 flex-wrap mb-20">
+      <div className="flex justify-center gap-10 flex-wrap mb-20 px-2">
         <FeaturedGame title="Greatest Win" game={greatestWin} />
         <FeaturedGame title="Worst Loss" game={greatestLoss} />
         <FeaturedGame title="Longest Overtime" game={longestOT} />
