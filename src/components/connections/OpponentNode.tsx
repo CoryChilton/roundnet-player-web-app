@@ -13,7 +13,6 @@ export default function OpponentNode({node, player1ListedFirst}:{node:Node, play
     temp = game.team_1;
     game.team_1 = game.team_2;
     game.team_2 = temp;
-    console.log(game)
   }
   return (
     <div className="border border-gray-300 shadow-glow shadow-red-500 h-80 sm:h-96 flex flex-col items-center justify-around py-4 px-2 rounded-3xl aspect-square text-center">

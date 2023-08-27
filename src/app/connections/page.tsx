@@ -9,11 +9,11 @@ export default function Connections(){
   const [connectionType, setConnectionType]:['both' | 'teammates' | 'opponents', any] = useState('both');
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
-  const playerClick1 = (e:any) => {
-    setPlayer1(e.target.value);
+  const playerClick1 = (name:string) => {
+    setPlayer1(name);
   }
-  const playerClick2 = (e:any) => {
-    setPlayer2(e.target.value);
+  const playerClick2 = (name:string) => {
+    setPlayer2(name);
   }
   const changeConnectionType = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.textContent && setConnectionType(e.currentTarget.textContent.toLowerCase());

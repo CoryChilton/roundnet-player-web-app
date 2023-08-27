@@ -22,8 +22,6 @@ export default function PlayerPage({params}: pageProps){
   const greatestWin = JSON.parse(player.greatest_point_diff_game_win);
   const longestOT = JSON.parse(player.longest_overtime_game);
   const closestSeries = JSON.parse(player.closest_series);
-
-  console.log(player.past_tournaments);
   
   const PERCENT_GAME_WINS = Math.round(player.games_won / (player.games_won + player.games_lost) * 100);
   const PERCENT_SERIES_WINS = Math.round(player.series_won / (player.series_won + player.series_lost) * 100);
