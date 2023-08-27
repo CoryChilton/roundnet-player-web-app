@@ -21,7 +21,11 @@ export default function PlayerSelect() {
     <div className="flex flex-col items-center w-full">
       <input className="border-2 border-purple-300 focus:bg-inherit rounded-full py-2 px-4 text-xl text-gray-200 mb-6 drop-shadow-glow bg-gray-800 ease-in-out duration-500 focus:outline-none" placeholder="Enter Player's Name" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       {!players.length ? 
-        <div className="mt-6"><Loading /></div> 
+        <div className="mt-6"><Loading /></div>
+      : searchInput.toLowerCase() === 'dear sasaki' ?
+        <h1 className="text-center mt-10 text-red-400 text-3xl text-shadow-glow shadow-red-700 mx-20">
+          Hi Dear!
+        </h1>
       : !searchedPlayers.length ? 
         <h1 className="text-center mt-10 text-red-400 text-3xl text-shadow-glow shadow-red-700 mx-20">
           NO PLAYERS FOUND WITH THE NAME: {'"'}{searchInput.toUpperCase()}{'"'}
