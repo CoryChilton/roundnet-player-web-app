@@ -30,7 +30,7 @@ export default function PlayerPage({params}: pageProps){
     return <div className="text-center mt-10"><Loading /></div>
   }
   return (
-    <div>
+    <div className="mb-20">
       <h1 className="text-center font-bold text-4xl mb-10 text-shadow-glow shadow-yellow-700 text-gray-100">
         {firstLetterUpper(player.player_name)}&apos;s Stats
       </h1>
@@ -39,10 +39,12 @@ export default function PlayerPage({params}: pageProps){
         <StatBlock percent={PERCENT_SERIES_WINS} label="Series Wins" won={player.series_won} lost={player.series_lost}/>
         <StatBlock percent={PERCENT_POINT_WINS} label="Point Wins" won={player.points_won} lost={player.points_lost} />
       </div>
-      <div className="flex justify-center gap-10 flex-wrap mb-20 px-2">
-        <FeaturedGame title="Greatest Win" game={greatestWin} />
-        <FeaturedGame title="Worst Loss" game={greatestLoss} />
-        <FeaturedGame title="Longest Overtime" game={longestOT} />
+      <div className="flex flex-col items-center">
+        <div className="flex justify-center gap-10 flex-wrap px-2 mb-10">
+          <FeaturedGame title="Greatest Win" game={greatestWin} />
+          <FeaturedGame title="Worst Loss" game={greatestLoss} />
+          <FeaturedGame title="Longest Overtime" game={longestOT} />
+        </div>
         <FeaturedSeries title="Closest Series" series={closestSeries} />
       </div>
     </div>
