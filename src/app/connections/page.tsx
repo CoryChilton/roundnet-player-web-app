@@ -28,7 +28,7 @@ export default function Connections(){
         Choose which players you would like to find the connection between:
       </h2>
       <div className="flex flex-col md:flex-row mb-10 gap-8 w-full max-w-3xl">
-          <ConnectionPlayerSelect label="First Player:" selectedPlayer={player1} playerClick={playerClick1} listId="1" />
+          <ConnectionPlayerSelect label="First Player:" selectedPlayer={player1} playerClick={playerClick1} listId="1" first={true} />
           <ConnectionPlayerSelect label="Second Player:" selectedPlayer={player2} playerClick={playerClick2} listId="2" />
       </div>
       <ConnectionOptionMenu connectionType={connectionType} changeConnectionType={changeConnectionType} />
