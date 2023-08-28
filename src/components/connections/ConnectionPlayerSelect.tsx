@@ -47,7 +47,7 @@ export default function ConnectionPlayerSelect({
         :
           <h2 className="text-3xl text-shadow-glow shadow-purple-600 text-gray-300 font-semibold px-4 py-2 text-center">{selectedPlayer}</h2>
         }
-        <div className={`absolute bg-gray-900 top-1/2 left-0 pt-8 w-full rounded-b-xl border-gray-500 border overflow-auto max-h-96 ${!searchInput && 'scale-y-0 -translate-y-1/2'} transition-all ${first ? 'z-40' : 'z-20'}`}>
+        <div className={`absolute bg-gray-900 top-1/2 left-0 pt-8 w-full rounded-b-xl border-gray-500 border overflow-auto max-h-96 ${!searchInput && 'opacity-0 scale-y-0 -translate-y-1/2'} transition-transform ${first ? 'z-40' : 'z-20'}`}>
           {!players.length ?
             <h2 className="text-left pl-3 py-1 text-yellow-500 text-lg">Getting all player names...</h2>
           : !searchedPlayers.length ?
