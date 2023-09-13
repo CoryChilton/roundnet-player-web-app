@@ -43,13 +43,17 @@ export default function FeaturedSeries({
       <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold text-center">
         {scores2[1]}
       </h3>
-      <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold text-center py-1">
-        {scores1[2]}
-      </h3>
-      <div className="text-gray-500 font-bold text-3xl text-center">-</div>
-      <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold text-center">
-        {scores2[2]}
-      </h3>
+      {scores1.length === 3 &&
+        <>
+          <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold text-center py-1">
+            {scores1[2]}
+          </h3>
+          <div className="text-gray-500 font-bold text-3xl text-center">-</div>
+          <h3 className="text-5xl text-pink-200 text-shadow-glow shadow-pink-500 font-semibold text-center">
+            {scores2[2]}
+          </h3>
+        </>
+      }
       <h4 className="text-gray-300 font-extralight text-center mt-2">
         {firstLetterUpper(players1[0])} and {firstLetterUpper(players1[1])}
       </h4>
